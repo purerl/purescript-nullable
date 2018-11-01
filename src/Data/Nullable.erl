@@ -1,9 +1,10 @@
 -module(data_nullable).
--export([null/0, nullable/3, notNull/1]).
+-export([null/0, nullable/0, notNull/1]).
 
 null() -> null.
 
-nullable(A, R, _F) when A =:= null -> R;
-nullable(A, _R, F) -> F(A).
+nullable() -> fun (A, R, _F) when A =:= null -> R;
+                  (A, _R, F) -> F(A)
+              end.
 
 notNull(X) -> X.
