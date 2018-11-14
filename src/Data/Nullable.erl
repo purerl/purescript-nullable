@@ -1,4 +1,4 @@
--module(data_nullable).
+-module(data_nullable@foreign).
 -export([null/0, nullable/0, notNull/1]).
 
 null() -> null.
